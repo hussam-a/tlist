@@ -12,17 +12,28 @@
 #include <linux/sched.h>
 #include <linux/printk.h>
 
-void dfs(struct task_struct *task)
+char spaces[1000];
+
+void dfs(struct task_struct *task, int n)
 {
 	struct task_struct *next_task;
 	struct list_head *list;
-
-	printk(KERN_INFO "PID: %d    State: %ld    Name: %s\n", task->pid, task->state, task->comm);
+	
+	int i = 0;
+	int j = n;
+	for (; i < j ; i = i +1)
+	{
+		spaces[i] = ' ';
+	}
+	spaces[j] = '\0';	
+	
+	printk(KERN_INFO "%s|_PID: %d    State: %ld    Name: %s\n", spaces, task->pid, task->state, task->comm);
 
 	list_for_each(list, &task->children) 
 	{
 		next_task = list_entry(list, struct task_struct, sibling);
-		dfs(next_task);
+		n= n+1;
+		dfs(next_task,n);
 	}
 }
 
@@ -30,7 +41,7 @@ void dfs(struct task_struct *task)
 int simple_init(void)
 {
 	printk(KERN_INFO "Loading tlist DFS Module\n");
-	dfs(&init_task);
+	dfs(&init_task, 0);
 	return 0;
 }
 
