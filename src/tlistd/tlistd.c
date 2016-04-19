@@ -1,5 +1,9 @@
 /*
-
+	Hussam Ashraf El-Araby
+	Operating Syste Concepts Ninth Edition
+	Chapter  Project 2
+	
+	Task Lister (Depth First Search)
 */
 
 #include <linux/init.h>
@@ -41,6 +45,6 @@ module_init( simple_init );
 module_exit( simple_exit );
 
 MODULE_LICENSE("GPL");
-MODULE_DESCRIPTION("Simple Module");
-MODULE_AUTHOR("SGG");
+MODULE_DESCRIPTION("tlistd");
+MODULE_AUTHOR("Hussam A. El-Araby");
 
