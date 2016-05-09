@@ -1,9 +1,9 @@
 /*
-	Hussam Ashraf El-Araby
-	Operating Syste Concepts Ninth Edition
-	Chapter  Project 2
-	
-	Task Lister (linearly)
+Part of tlist (github.com/hussam-a/tlist)
+Authors:
+Hussam A. El-Araby (github.com/hussam-a)
+
+Project code and configurations are under the GNU GPL license (tlist/LICENSE) 
 */
 
 #include <linux/init.h>
